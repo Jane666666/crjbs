@@ -1,0 +1,50 @@
+{
+    "logging": {
+        "job_id": "",
+        "job_name": "unit_test_job",
+        "logging_path": "/geniusland/home/chenruijia/charlesxu90-ab-gen-0dec1ac/reinvent/Reinvent-m/Reinvent-master/test_result",
+        "recipient": "local",
+        "sender": ""
+    },
+    "model_type": "default",
+    "parameters": {
+        "scoring": {
+            "input": "/geniusland/home/chenruijia/charlesxu90-ab-gen-0dec1ac/reinvent/Reinvent-m/Reinvent-master/test_result/test.smi"
+        },
+        "scoring_function": {
+            "name": "custom_sum",
+            "parallel": false,
+            "parameters": [
+                {
+                    "component_type": "tanimoto_similarity",
+                    "name": "tanimoto_similarity",
+                    "specific_parameters": {
+                        "smiles": [
+                            "CCC",
+                            "O=C(C)Oc1ccccc1C(=O)O"
+                        ],
+                        "transformation": {
+                            "transformation_type": "no_transformation"
+                        }
+                    },
+                    "weight": 1
+                },
+                {
+                    "component_type": "matching_substructure",
+                    "name": "matching_substructure_name",
+                    "specific_parameters": {
+                        "smiles": [
+                            "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"
+                        ],
+                        "transformation": {
+                            "transformation_type": "no_transformation"
+                        }
+                    },
+                    "weight": 1.0
+                }
+            ]
+        }
+    },
+    "run_type": "scoring",
+    "version": "2.0"
+}

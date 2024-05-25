@@ -1,0 +1,35 @@
+/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/torch/cuda/__init__.py:104: UserWarning: 
+NVIDIA A100 80GB PCIe with CUDA capability sm_80 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_61 sm_70 sm_75 compute_37.
+If you want to use the NVIDIA A100 80GB PCIe GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(incompatible_device_warn.format(device_name, capability, " ".join(arch_list), device_name))
+/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/sklearn/base.py:306: UserWarning: Trying to unpickle estimator DecisionTreeRegressor from version 0.21.2 when using version 0.21.3. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/sklearn/base.py:306: UserWarning: Trying to unpickle estimator RandomForestRegressor from version 0.21.2 when using version 0.21.3. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+20:20:35: local_reinforcement_logger.log_message +32: INFO     starting an RL run
+Traceback (most recent call last):
+  File "/geniusland/home/chenruijia/charlesxu90-ab-gen-0dec1ac/reinvent/Reinvent-m/Reinvent-master/input.py", line 43, in <module>
+    manager.run()
+  File "/geniusland/home/chenruijia/charlesxu90-ab-gen-0dec1ac/reinvent/Reinvent-m/Reinvent-master/running_modes/manager.py", line 20, in run
+    runner.run()
+  File "/geniusland/home/chenruijia/charlesxu90-ab-gen-0dec1ac/reinvent/Reinvent-m/Reinvent-master/running_modes/reinforcement_learning/core_reinforcement_learning.py", line 45, in run
+    seqs, smiles, agent_likelihood = self._sample_unique_sequences(self._agent, self.config.batch_size)
+  File "/geniusland/home/chenruijia/charlesxu90-ab-gen-0dec1ac/reinvent/Reinvent-m/Reinvent-master/running_modes/reinforcement_learning/core_reinforcement_learning.py", line 85, in _sample_unique_sequences
+    seqs, smiles, agent_likelihood = agent.sample(batch_size)
+  File "/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/reinvent_models/model_factory/reinvent_core_adapter.py", line 27, in sample
+    return self.generative_model.sample_sequences_and_smiles(batch_size)
+  File "/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/reinvent_models/reinvent_core/models/model.py", line 215, in sample_sequences_and_smiles
+    seqs, likelihoods = self._sample(batch_size=batch_size)
+  File "/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/reinvent_models/reinvent_core/models/model.py", line 229, in _sample
+    logits, hidden_state = self.network(input_vector.unsqueeze(1), hidden_state)
+  File "/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/reinvent_models/reinvent_core/models/model.py", line 65, in forward
+    output_vector, hidden_state_out = self._rnn(embedded_data, hidden_state)
+  File "/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/geniusland/home/chenruijia/miniconda3/envs/reinvent.v3.2/lib/python3.7/site-packages/torch/nn/modules/rnn.py", line 582, in forward
+    self.dropout, self.training, self.bidirectional, self.batch_first)
+RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED
